@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Amazing Body 2026</title>
+    <style>
+        :root {
+            --bg-skin: #fffaf0; /* Warm soft background */
+            --muscle-red: #ff5252;
+        }
+
+        body {
+            background-color: var(--bg-skin);
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #6c5ce7; /* Friendly Purple */
+            font-size: 3rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0px white;
+        }
+
+        .subtitle {
+            color: #e67e22;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .body-box {
+            background: white;
+            border: 6px solid;
+            border-radius: 35px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 0px rgba(0,0,0,0.05);
+        }
+
+        .body-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 20px rgba(0,0,0,0.1);
+        }
+
+        .body-emoji {
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .body-name {
+            font-size: 1.5rem;
+            color: #2d3436;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .body-action {
+            font-size: 0.9rem;
+            color: #00b894;
+            margin-top: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* 2026 Discovery Palette */
+        .color-0 { border-color: #fab1a0; } /* Face/Skin */
+        .color-1 { border-color: #81ecec; } /* Brain/Eyes */
+        .color-2 { border-color: #ffeaa7; } /* Hands/Action */
+        .color-3 { border-color: #ff7675; } /* Heart/Vital */
+        .color-4 { border-color: #a29bfe; } /* Feet/Movement */
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+    <div class="header">
+        <h1>🦸‍♂️ My Amazing Body 🦸‍♀️</h1>
+        <p class="subtitle">Click a part to see what it does!</p>
+    </div>
+
+    <div id="body-grid" class="grid-container"></div>
+
+    <script>
+        const bodyData = [
+            { name: 'Brain', icon: '🧠', action: 'Thinking', fact: 'My brain helps me learn and dream!' },
+            { name: 'Eyes', icon: '👀', action: 'Seeing', fact: 'I use my eyes to see beautiful colors!' },
+            { name: 'Ears', icon: '👂', action: 'Hearing', fact: 'I listen to music and stories with my ears!' },
+            { name: 'Nose', icon: '👃', action: 'Smelling', fact: 'I can smell yummy food with my nose!' },
+            { name: 'Mouth', icon: '👄', action: 'Speaking', fact: 'I use my mouth to talk, eat, and smile!' },
+            { name: 'Heart', icon: '❤️', action: 'Pumping', fact: 'My heart pumps blood to keep me strong!' },
+            { name: 'Hands', icon: '🖐️', action: 'Touching', fact: 'I use my hands to draw and play!' },
+            { name: 'Arm', icon: '💪', action: 'Strong', fact: 'My arms help me lift and hug!' },
+            { name: 'Legs', icon: '🦵', action: 'Running', fact: 'My legs help me walk, run, and jump!' },
+            { name: 'Feet', icon: '🦶', action: 'Walking', fact: 'My feet take me on fun adventures!' },
+            { name: 'Stomach', icon: '😋', action: 'Digesting', fact: 'My stomach turns food into energy!' },
+            { name: 'Teeth', icon: '🦷', action: 'Chewing', fact: 'I brush my teeth to keep them sparkly white!' }
+        ];
+
+        const grid = document.getElementById('body-grid');
+
+        bodyData.forEach((part, index) => {
+            const box = document.createElement('div');
+            box.className = `body-box color-${index % 5}`;
+            
+            box.innerHTML = `
+                <span class="body-emoji">${part.icon}</span>
+                <p class="body-name">${part.name}</p>
+                <div class="body-action">${part.action}</div>
+            `;
+
+            box.onclick = () => {
+                // Wobble Animation
+                const emoji = box.querySelector('.body-emoji');
+                emoji.animate([
+                    { transform: 'rotate(0deg)' },
+                    { transform: 'rotate(15deg)' },
+                    { transform: 'rotate(-15deg)' },
+                    { transform: 'rotate(0deg)' }
+                ], { duration: 400 });
+
+                // Speech Output
+                const speech = new SpeechSynthesisUtterance();
+                speech.text = `This is my ${part.name}. I use it for ${part.action}. ${part.fact}`;
+                speech.rate = 1.0;
+                speech.pitch = 1.3; 
+                window.speechSynthesis.speak(speech);
+            };
+
+            grid.appendChild(box);
+        });
+    </script>
+</body>
+</html>

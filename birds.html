@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Bird Kingdom 2026</title>
+    <style>
+        :root {
+            --sky-light: #f0f7ff;
+            --cloud-white: #ffffff;
+            --sunny-day: #ffeb3b;
+        }
+
+        body {
+            background-color: var(--sky-light);
+            background-image: radial-gradient(#d1e9ff 2px, transparent 2px);
+            background-size: 30px 30px; /* Subtle cloud-like pattern */
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #0288d1; /* Deep Sky Blue */
+            font-size: 3.2rem;
+            margin-bottom: 5px;
+            text-shadow: 3px 3px 0px white;
+        }
+
+        .subtitle {
+            color: #ef6c00;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .bird-box {
+            background: var(--cloud-white);
+            border: 6px solid;
+            border-radius: 40px; /* Extra rounded for a soft look */
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .bird-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,136,209,0.2);
+        }
+
+        .bird-emoji {
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .bird-name {
+            font-size: 1.6rem;
+            color: #333;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .bird-call {
+            font-size: 1rem;
+            color: #009688;
+            margin-top: 5px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Tropical & Sky Colors */
+        .color-0 { border-color: #03A9F4; background-color: #e1f5fe; } /* Bluebird */
+        .color-1 { border-color: #FF5722; background-color: #fbe9e7; } /* Parrot Red */
+        .color-2 { border-color: #8BC34A; background-color: #f1f8e9; } /* Jungle Green */
+        .color-3 { border-color: #FFC107; background-color: #fff9c4; } /* Canary Yellow */
+        .color-4 { border-color: #9C27B0; background-color: #f3e5f5; } /* Peacock Purple */
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+    <div class="header">
+        <h1>🐤 Learn birds 🦜</h1>
+        <p class="subtitle">Click a bird to watch it flap and sing!</p>
+    </div>
+
+    <div id="bird-grid" class="grid-container"></div>
+
+    <script>
+        const birdData = [
+            { name: 'Parrot', icon: '🦜', call: 'Squawk!', fact: 'I can talk like you!' },
+            { name: 'Owl', icon: '🦉', call: 'Hoo-Hoo!', fact: 'I stay awake at night' },
+            { name: 'Duck', icon: '🦆', call: 'Quack!', fact: 'I love swimming in ponds' },
+            { name: 'Chicken', icon: '🐔', call: 'Cluck!', fact: 'I lay yummy eggs' },
+            { name: 'Penguin', icon: '🐧', call: 'Honk!', fact: 'I am a bird that swims' },
+            { name: 'Eagle', icon: '🦅', call: 'Screech!', fact: 'I fly very high' },
+            { name: 'Swan', icon: '🦢', call: 'Honk!', fact: 'I am very graceful' },
+            { name: 'Flamingo', icon: '🦩', call: 'Bray!', fact: 'I am pink and stand on one leg' },
+            { name: 'Peacock', icon: '🦚', call: 'Paa-ow!', fact: 'I have beautiful feathers' },
+            { name: 'Turkey', icon: '🦃', call: 'Gobble!', fact: 'I have a big tail' },
+            { name: 'Dove', icon: '🕊️', call: 'Coo!', fact: 'I am a bird of peace' },
+            { name: 'Chick', icon: '🐥', call: 'Cheep!', fact: 'I am a fuzzy baby bird' }
+        ];
+
+        const grid = document.getElementById('bird-grid');
+
+        birdData.forEach((bird, index) => {
+            const box = document.createElement('div');
+            box.className = `bird-box color-${index % 5}`;
+            
+            box.innerHTML = `
+                <span class="bird-emoji">${bird.icon}</span>
+                <p class="bird-name">${bird.name}</p>
+                <p class="bird-call">${bird.call}</p>
+            `;
+
+            box.onclick = () => {
+                // Flap animation
+                const emoji = box.querySelector('.bird-emoji');
+                emoji.animate([
+                    { transform: 'translateY(0)' },
+                    { transform: 'translateY(-20px)' },
+                    { transform: 'translateY(0)' }
+                ], { duration: 400, iterations: 2 });
+
+                // Speech Output
+                const speech = new SpeechSynthesisUtterance();
+                speech.text = `This is a ${bird.name}. The ${bird.name} says ${bird.call}. ${bird.fact}.`;
+                speech.rate = 1.1;
+                speech.pitch = 1.4; 
+                window.speechSynthesis.speak(speech);
+            };
+
+            grid.appendChild(box);
+        });
+    </script>
+</body>
+</html>

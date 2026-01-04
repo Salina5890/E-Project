@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABCs</title>
+    <style>
+        body {
+            background-color: #fff9c4; /* Light yellow kid-friendly bg */
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #e91e63;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px white;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .letter-box {
+            background: white;
+            border: 8px solid; /* Colored via JS */
+            border-radius: 25px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 0px rgba(0,0,0,0.1);
+        }
+
+        .letter-box:hover {
+            transform: scale(1.05);
+            filter: brightness(1.05);
+        }
+
+        .letter-box:active {
+            transform: scale(0.95);
+        }
+
+        .letter-display {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 0;
+            display: block;
+        }
+
+        .upper { color: #1e88e5; }
+        .lower { color: #f44336; }
+
+        .letter-word {
+            font-size: 1.3rem;
+            color: #555;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        .letter-img {
+            font-size: 3.5rem;
+            margin-top: 5px;
+        }
+
+        /* Color palette for the boxes */
+        .color-0 { border-color: #FF5252; }
+        .color-1 { border-color: #448AFF; }
+        .color-2 { border-color: #4CAF50; }
+        .color-3 { border-color: #FFC107; }
+        .color-4 { border-color: #E040FB; }
+    </style>
+</head>
+<body>
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">G.K ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+            
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+
+    
+    <h1>🌟 Learn Alphabets 🌟</h1>
+    <div id="alphabet-grid" class="grid-container"></div>
+
+    <script>
+        const grid = document.getElementById('alphabet-grid');
+
+        const alphaData = {
+            'A': { w: 'Apple', i: '🍎' }, 'B': { w: 'Ball', i: '⚽' },
+            'C': { w: 'Cat', i: '🐱' }, 'D': { w: 'Dog', i: '🐶' },
+            'E': { w: 'Elephant', i: '🐘' }, 'F': { w: 'Fish', i: '🐟' },
+            'G': { w: 'Grapes', i: '🍇' }, 'H': { w: 'Hat', i: '🎩' },
+            'I': { w: 'Ice Cream', i: '🍦' }, 'J': { w: 'Juice', i: '🧃' },
+            'K': { w: 'Kite', i: '🪁' }, 'L': { w: 'Lion', i: '🦁' },
+            'M': { w: 'Monkey', i: '🐒' }, 'N': { w: 'Net', i: '🥅' },
+            'O': { w: 'Orange', i: '🍊' }, 'P': { w: 'Pencil', i: '✏️' },
+            'Q': { w: 'Queen', i: '👸' }, 'R': { w: 'Rabbit', i: '🐰' },
+            'S': { w: 'Sun', i: '☀️' }, 'T': { w: 'Tiger', i: '🐯' },
+            'U': { w: 'Umbrella', i: '⛱️' }, 'V': { w: 'Van', i: '🚐' },
+            'W': { w: 'Watch', i: '⌚' }, 'X': { w: 'New', i: '🆕' }, 
+            'Y': { w: 'Yo-yo', i: '🪀' }, 'Z': { w: 'Zebra', i: '🦓' }
+        };
+
+        for (let i = 65; i <= 90; i++) {
+            const UpperCase = String.fromCharCode(i);
+            const LowerCase = UpperCase.toLowerCase();
+            const data = alphaData[UpperCase];
+
+            const box = document.createElement('div');
+            // Assign a color class 0 through 4
+            box.className = `letter-box color-${i % 5}`;
+            
+            box.innerHTML = `
+                <div class="letter-display">
+                    <span class="upper">${UpperCase}</span><span class="lower">${LowerCase}</span>
+                </div>
+                <p class="letter-word">${data.w}</p>
+                <div class="letter-img">${data.i}</div>
+            `;
+
+            box.onclick = () => {
+                // Visual feedback
+                box.style.backgroundColor = "#e1f5fe";
+                setTimeout(() => box.style.backgroundColor = "white", 200);
+
+                // Speech
+                const speech = new SpeechSynthesisUtterance();
+                speech.text = `${UpperCase}... and small... ${LowerCase}... is for... ${data.w}`;
+                speech.rate = 0.9;
+                speech.pitch = 1.1;
+                window.speechSynthesis.speak(speech);
+            };
+
+            grid.appendChild(box);
+        }
+    </script>
+</body>
+</html>

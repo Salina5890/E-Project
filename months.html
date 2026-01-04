@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Months 2026</title>
+    <style>
+        :root {
+            --bg-calendar: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--bg-calendar);
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #4834d4; /* Royal Purple */
+            font-size: 3rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0px white;
+        }
+
+        .subtitle {
+            color: #686de0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .month-box {
+            background: white;
+            border: 6px solid;
+            border-radius: 30px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 0px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .month-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 15px rgba(0,0,0,0.1);
+        }
+
+        .month-emoji {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .month-name {
+            font-size: 1.4rem;
+            color: #333;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .month-days {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+            background: #eee;
+            padding: 2px 10px;
+            border-radius: 15px;
+        }
+
+        /* Seasonal Palette */
+        .winter { border-color: #74b9ff; background-color: #f1f9ff; } /* Jan, Feb, Dec */
+        .spring { border-color: #ff7675; background-color: #fff5f5; } /* Mar, Apr, May */
+        .summer { border-color: #ffe135; background-color: #fffde7; } /* Jun, Jul, Aug */
+        .autumn { border-color: #e67e22; background-color: #fffaf0; } /* Sep, Oct, Nov */
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+    <div class="header">
+        <h1>🗓️ Learn about Months 🌟</h1>
+        <p class="subtitle">Click a months to hear its secret fact!</p>
+    </div>
+
+    <div id="month-grid" class="grid-container"></div>
+
+    <script>
+        const monthData = [
+            { name: 'January', icon: '❄️', days: 31, season: 'winter', fact: 'January starts the New Year!' },
+            { name: 'February', icon: '❤️', days: 28, season: 'winter', fact: 'The shortest month of the year.' },
+            { name: 'March', icon: '🌱', days: 31, season: 'spring', fact: 'When the spring flowers start to wake up!' },
+            { name: 'April', icon: '🌧️', days: 30, season: 'spring', fact: 'April showers bring May flowers!' },
+            { name: 'May', icon: '🌸', days: 31, season: 'spring', fact: 'The month of blooming gardens.' },
+            { name: 'June', icon: '☀️', days: 30, season: 'summer', fact: 'Hello, summer sunshine!' },
+            { name: 'July', icon: '🍦', days: 31, season: 'summer', fact: 'Perfect for ice cream and swimming.' },
+            { name: 'August', icon: '🍉', days: 31, season: 'summer', fact: 'The hottest month with the best fruit.' },
+            { name: 'September', icon: '🍎', days: 30, season: 'autumn', fact: 'Time to go back to school!' },
+            { name: 'October', icon: '🎃', days: 31, season: 'autumn', fact: 'Orange leaves and pumpkin fun.' },
+            { name: 'November', icon: '🍂', days: 30, season: 'autumn', fact: 'Crunchy leaves are everywhere.' },
+            { name: 'December', icon: '🎁', days: 31, season: 'winter', fact: 'A month of giving and cozy sweaters.' }
+        ];
+
+        const grid = document.getElementById('month-grid');
+
+        monthData.forEach((month) => {
+            const box = document.createElement('div');
+            box.className = `month-box ${month.season}`;
+            
+            box.innerHTML = `
+                <span class="month-emoji">${month.icon}</span>
+                <p class="month-name">${month.name}</p>
+                <span class="month-days">${month.days} Days</span>
+            `;
+
+            box.onclick = () => {
+                // Moon Orbit Animation
+                const emoji = box.querySelector('.month-emoji');
+                emoji.animate([
+                    { transform: 'translateX(0) rotate(0deg)' },
+                    { transform: 'translateX(20px) rotate(180deg)' },
+                    { transform: 'translateX(0) rotate(360deg)' }
+                ], { duration: 600 });
+
+                // Speech Output
+                const speech = new SpeechSynthesisUtterance();
+                speech.text = `${month.name} has ${month.days} days. ${month.fact}`;
+                speech.rate = 1.0;
+                speech.pitch = 1.2; 
+                window.speechSynthesis.speak(speech);
+            };
+
+            grid.appendChild(box);
+        });
+    </script>
+</body>
+</html>

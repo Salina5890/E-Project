@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Learning & Math Fun!</title>
+    <style>
+        /* CSS Variables for 2026 Theme */
+        :root {
+            --pastel-green: #E4F78F;
+            --dark-green: #3d4a1a;
+            --sky-blue: #264e6e;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+            background-color: var(--sky-blue);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- NAVBAR STYLES --- */
+        .navbar {
+            background-color: var(--pastel-green);
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .dropdown { position: relative; display: inline-block; }
+
+        .dropbtn {
+            background-color: transparent;
+            color: var(--dark-green);
+            padding: 18px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .dropdown:hover .dropbtn { background-color: rgba(255, 255, 255, 0.3); }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-family: sans-serif;
+        }
+
+        .dropdown-content a:hover { background-color: #f5fce0; }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        /* --- MATH GAME STYLES --- */
+        .game-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .game-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 30px;
+            border: 8px solid var(--pastel-green);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 95%;
+            max-width: 500px;
+        }
+
+        h1 { color: #FF5757; font-size: 2.2rem; margin-top: 0; }
+
+        .mode-btn {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+            background: #5271FF;
+            color: white;
+            font-weight: bold;
+        }
+
+        .mode-btn.active { background: #FF5757; transform: scale(1.1); }
+
+        .visual-aid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+            font-size: 2.5rem;
+            min-height: 60px;
+        }
+
+        .equation-box {
+            font-size: 3.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        input {
+            width: 90px;
+            height: 70px;
+            font-size: 2.5rem;
+            text-align: center;
+            border: 4px solid #5ce1e6;
+            border-radius: 15px;
+            font-family: inherit;
+        }
+
+        #check-btn {
+            background: #7ED957;
+            color: white;
+            font-size: 1.8rem;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #5EAF3F;
+        }
+
+        #check-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #5EAF3F; }
+
+        #message { font-size: 1.8rem; margin-top: 15px; min-height: 40px; font-weight: bold; }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar { flex-direction: column; }
+            .dropdown-content { position: relative; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting.html">Counting</a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Rhymes</a>
+        </div>
+    </div>
+</nav>
+
+<div class="game-container">
+    <div class="game-card">
+        <h1>Count the Objects!</h1>
+        
+        <div class="mode-buttons">
+            <button class="mode-btn active" id="addBtn" onclick="setMode('add')">Plus (+)</button>
+            <button class="mode-btn" id="subBtn" onclick="setMode('sub')">Minus (-)</button>
+        </div>
+
+        <div id="visuals" class="visual-aid"></div>
+
+        <div class="equation-box">
+            <span id="num1">?</span>
+            <span id="operator">+</span>
+            <span id="num2">?</span>
+            <span>=</span>
+            <input type="number" id="guess" inputmode="numeric">
+        </div>
+
+        <button id="check-btn" onclick="checkAnswer()">CHECK</button>
+        <div id="message"></div>
+    </div>
+</div>
+
+<script>
+    let n1, n2, correctAnswer;
+    let mode = 'add';
+    const emojis = ['🍎', '⭐️', '🦁', '🚗', '🍭', '🎈'];
+
+    function initGame() {
+        let emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        
+        if (mode === 'add') {
+            n1 = Math.floor(Math.random() * 5) + 1;
+            n2 = Math.floor(Math.random() * 5) + 1;
+            correctAnswer = n1 + n2;
+            document.getElementById('operator').innerText = '+';
+        } else {
+            n1 = Math.floor(Math.random() * 5) + 6; // 6 to 10
+            n2 = Math.floor(Math.random() * 5) + 1; // 1 to 5
+            correctAnswer = n1 - n2;
+            document.getElementById('operator').innerText = '-';
+        }
+
+        document.getElementById('num1').innerText = n1;
+        document.getElementById('num2').innerText = n2;
+        document.getElementById('guess').value = '';
+        document.getElementById('message').innerText = '';
+        
+        // Show Emojis
+        let visualHTML = '';
+        for(let i=0; i<n1; i++) visualHTML += `<span>${emoji}</span>`;
+        visualHTML += `<span style="margin:0 10px; font-size:1.5rem"> & </span>`;
+        for(let i=0; i<n2; i++) visualHTML += `<span>${emoji}</span>`;
+        document.getElementById('visuals').innerHTML = visualHTML;
+    }
+
+    function setMode(m) {
+        mode = m;
+        document.getElementById('addBtn').classList.toggle('active', m === 'add');
+        document.getElementById('subBtn').classList.toggle('active', m === 'sub');
+        initGame();
+    }
+
+    function checkAnswer() {
+        const userGuess = parseInt(document.getElementById('guess').value);
+        const msg = document.getElementById('message');
+        
+        if (userGuess === correctAnswer) {
+            msg.style.color = "#7ED957";
+            msg.innerText = "🌟 Brilliant! Correct! 🌟";
+            setTimeout(initGame, 2000);
+        } else {
+            msg.style.color = "#FF5757";
+            msg.innerText = "Try Again! You can do it! 💪";
+        }
+    }
+
+    // Start the game for the first time
+    initGame();
+</script>
+
+</body>
+</html>

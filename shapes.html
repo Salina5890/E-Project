@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Shape Magic 2026</title>
+    <style>
+        :root {
+            --bg-canvas: #fff5f8; /* Very soft pink canvas */
+            --shape-primary: #6c5ce7;
+        }
+
+        body {
+            background-color: var(--bg-canvas);
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #d63031; /* Bright Red */
+            font-size: 3.2rem;
+            margin-bottom: 5px;
+            text-shadow: 3px 3px 0px white;
+        }
+
+        .subtitle {
+            color: #0984e3;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .shape-box {
+            background: white;
+            border: 6px solid;
+            border-radius: 30px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 12px 0px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .shape-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+        }
+
+        /* 2026 Standard Shape Icons */
+        .shape-visual {
+            font-size: 5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .shape-name {
+            font-size: 1.7rem;
+            color: #2d3436;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .shape-sides {
+            font-size: 1rem;
+            color: #636e72;
+            margin-top: 8px;
+            font-weight: bold;
+            background: #f1f2f6;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        /* Bright & Bold Recognition Colors */
+        .color-0 { border-color: #ff7675; } /* Red Circle */
+        .color-1 { border-color: #74b9ff; } /* Blue Square */
+        .color-2 { border-color: #55efc4; } /* Green Triangle */
+        .color-3 { border-color: #ffe135; } /* Yellow Star */
+        .color-4 { border-color: #a29bfe; } /* Purple Heart */
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+    <div class="header">
+        <h1>📐 Learn Shapes 🎨</h1>
+        <p class="subtitle">Click a shape to see it spin and learn its name!</p>
+    </div>
+
+    <div id="shape-grid" class="grid-container"></div>
+
+    <script>
+        const shapeData = [
+            { name: 'Circle', icon: '🔴', sides: '0 Sides', fact: 'I am round like a ball!' },
+            { name: 'Square', icon: '🟦', sides: '4 Sides', fact: 'All my sides are the same!' },
+            { name: 'Triangle', icon: '🔺', sides: '3 Sides', fact: 'I look like a pizza slice!' },
+            { name: 'Star', icon: '⭐', sides: '5 Points', fact: 'I twinkle in the sky!' },
+            { name: 'Heart', icon: '❤️', sides: 'Love', fact: 'I show kindness and love!' },
+            { name: 'Rectangle', icon: '▮', sides: '4 Sides', fact: 'I am like a long door!' },
+            { name: 'Diamond', icon: '💎', sides: '4 Sides', fact: 'I look like a kite!' },
+            { name: 'Oval', icon: '🥚', sides: '0 Sides', fact: 'I look like a yummy egg!' },
+            { name: 'Hexagon', icon: '🐝', sides: '6 Sides', fact: 'Bees use me for honey!' },
+            { name: 'Moon', icon: '🌙', sides: 'Crescent', fact: 'I shine at night time!' },
+            { name: 'Cloud', icon: '☁️', sides: 'Fluffy', fact: 'I float in the blue sky!' },
+            { name: 'Cube', icon: '🧊', sides: '3D Box', fact: 'I am like a toy block!' }
+        ];
+
+        const grid = document.getElementById('shape-grid');
+
+        shapeData.forEach((shape, index) => {
+            const box = document.createElement('div');
+            box.className = `shape-box color-${index % 5}`;
+            
+            box.innerHTML = `
+                <span class="shape-visual">${shape.icon}</span>
+                <p class="shape-name">${shape.name}</p>
+                <span class="shape-sides">${shape.sides}</span>
+            `;
+
+            box.onclick = () => {
+                // Spin and Pulse Animation
+                const visual = box.querySelector('.shape-visual');
+                visual.animate([
+                    { transform: 'rotate(0deg) scale(1)' },
+                    { transform: 'rotate(180deg) scale(1.3)' },
+                    { transform: 'rotate(360deg) scale(1)' }
+                ], { duration: 600, easing: 'ease-in-out' });
+
+                // Speech Output
+                const speech = new SpeechSynthesisUtterance();
+                speech.text = `This is a ${shape.name}. It has ${shape.sides}. ${shape.fact}`;
+                speech.rate = 1.0;
+                speech.pitch = 1.2; 
+                window.speechSynthesis.speak(speech);
+            };
+
+            grid.appendChild(box);
+        });
+    </script>
+</body>
+</html>

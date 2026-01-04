@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting 1 to 100 | Kids Fun</title>
+    <style>
+        body {
+            background-color: #fce4ec; /* Soft pink background */
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px white;
+        }
+
+        .grid-container {
+            display: grid;
+            /* Creates a responsive grid that fits more items per line */
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 15px;
+            width: 100%;
+            max-width: 1300px;
+        }
+
+        .number-box {
+            background: white;
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 0px rgba(0,0,0,0.1);
+            border: 5px solid; /* Colors assigned by JS */
+        }
+
+        .number-box:hover {
+            transform: translateY(-5px) scale(1.05);
+            filter: brightness(1.05);
+        }
+
+        .number-box:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0px rgba(0,0,0,0.1);
+        }
+
+        .number-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+
+        .count-dots {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2px;
+            margin-top: 5px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+.h3{
+    text-align: center;
+
+}
+        /* Border colors for the rainbow effect */
+        .color-0 { border-color: #FF5252; } /* Red */
+        .color-1 { border-color: #FF9800; } /* Orange */
+        .color-2 { border-color: #FFEB3B; } /* Yellow */
+        .color-3 { border-color: #4CAF50; } /* Green */
+        .color-4 { border-color: #2196F3; } /* Blue */
+        .color-5 { border-color: #9C27B0; } /* Purple */
+    </style>
+</head>
+<body>
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+    <h1>🔢 Counting 1 to 100 🔢</h1>
+    <h3> Click a box to hear !</h3>
+    <div id="counting-grid" class="grid-container"></div>
+
+    <script>
+        const grid = document.getElementById('counting-grid');
+        const colors = ['#FF5252', '#FF9800', '#FFEB3B', '#4CAF50', '#2196F3', '#9C27B0'];
+
+        for (let i = 1; i <= 100; i++) {
+            const box = document.createElement('div');
+            // Assign color based on the number
+            const colorIndex = i % 6;
+            box.className = `number-box color-${colorIndex}`;
+            
+            // Adding small visual dots inside boxes for lower numbers to help counting
+            let dotsHtml = '<div class="count-dots">';
+            if (i <= 20) {
+                for (let d = 0; d < i; d++) {
+                    dotsHtml += `<div class="dot" style="background-color: ${colors[colorIndex]}"></div>`;
+                }
+            } else {
+                dotsHtml += `<span style="font-size: 0.8rem; color: #888;">⭐⭐⭐</span>`;
+            }
+            dotsHtml += '</div>';
+
+            box.innerHTML = `
+                <div class="number-display">${i}</div>
+                ${dotsHtml}
+            `;
+
+            box.onclick = () => {
+                // Flash the background color of the box
+                box.style.backgroundColor = "#fff9c4";
+                setTimeout(() => box.style.backgroundColor = "white", 200);
+
+                // Speech Synthesis
+                const speech = new SpeechSynthesisUtterance();
+                speech.text = i.toString();
+                speech.rate = 1.0;
+                speech.pitch = 1.2;
+                window.speechSynthesis.speak(speech);
+            };
+
+            grid.appendChild(box);
+        }
+    </script>
+</body>
+</html>

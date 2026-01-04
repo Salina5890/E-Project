@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Magic Math Tables (2-5)</title>
+    <link href="fonts.googleapis.com" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #FFF9E7, #E0F2F1, #F3E5F5);
+            background-size: 400% 400%;
+            animation: bgMove 15s ease infinite;
+            font-family: 'DynaPuff', cursive;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-family: 'Sour Gummy', cursive;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: #FF5722;
+            text-shadow: 4px 4px 0px white, 7px 7px 0px rgba(0,0,0,0.05);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #4B0082;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            background: white;
+            padding: 5px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 0px #DDD;
+        }
+
+        .tables-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            width: 100%;
+            max-width: 850px;
+            z-index: 10;
+        }
+
+        .table-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 40px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border: 8px solid white;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .table-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            background: white;
+        }
+
+        /* Specific Colors for 2, 3, 4, 5 */
+        .table-2 { border-color: #4ECDC4; }
+        .table-3 { border-color: #FFD93D; }
+        .table-4 { border-color: #FF9FF3; }
+        .table-5 { border-color: #6C5CE7; }
+
+        .table-header { font-size: 2rem; margin-bottom: 20px; text-align: center; color: #333; }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 20px;
+            margin: 6px 0;
+            background: #F8F9FA;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            border: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .row:hover { border-color: inherit; background: #FFF; transform: translateX(5px); }
+        .ans { color: #2ECC71; font-weight: bold; }
+
+        .symbol {
+            position: absolute;
+            color: rgba(0,0,0,0.05);
+            font-size: 3rem;
+            z-index: 0;
+            animation: floatSymbol 10s linear infinite;
+        }
+
+        @keyframes floatSymbol {
+            0% { transform: translateY(110vh) rotate(0deg); }
+            100% { transform: translateY(-10vh) rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .tables-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+    <h1>🔢 Table Magic! ✨</h1>
+    <p class="subtitle">Click any row to hear the magic answer!</p>
+
+    <div id="master-grid" class="tables-grid"></div>
+
+    <script>
+        const container = document.getElementById('master-grid');
+        // Adjusted icons and colors to start from index 2
+        const icons = ['', '', '🐯', '🐧', '🚁', '⭐'];
+        const colors = ['', '', '#4ECDC4', '#FFD93D', '#FF9FF3', '#6C5CE7'];
+
+        // CHANGED: Loop now starts at 2 and ends at 5
+        for (let t = 2; t <= 5; t++) {
+            const card = document.createElement('div');
+            card.className = `table-card table-${t}`;
+            card.style.borderColor = colors[t];
+            
+            let html = `<div class="table-header">${icons[t]} Table ${t}</div>`;
+            
+            for (let i = 1; i <= 10; i++) {
+                const res = t * i;
+                html += `
+                    <div class="row" onclick="speak('${t} times ${i} is ${res}')">
+                        <span>${t} × ${i}</span>
+                        <span class="ans">${res}</span>
+                    </div>
+                `;
+            }
+            card.innerHTML = html;
+            container.appendChild(card);
+        }
+
+        function speak(text) {
+            window.speechSynthesis.cancel();
+            const msg = new SpeechSynthesisUtterance(text);
+            msg.pitch = 1.5; 
+            msg.rate = 0.9;
+            window.speechSynthesis.speak(msg);
+        }
+
+        function createSymbol() {
+            const syms = ['+', '-', '×', '÷', '🔢', '🚀'];
+            const s = document.createElement('div');
+            s.className = 'symbol';
+            s.innerText = syms[Math.floor(Math.random() * syms.length)];
+            s.style.left = Math.random() * 95 + 'vw';
+            s.style.animationDuration = (Math.random() * 5 + 7) + 's';
+            document.body.appendChild(s);
+            setTimeout(() => s.remove(), 10000);
+        }
+        setInterval(createSymbol, 800);
+    </script>
+</body>
+</html>

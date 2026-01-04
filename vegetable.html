@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Veggie World 2026</title>
+    <style>
+        :root {
+            --bg-color: #f1f8e9; /* Light mint green bg */
+            --header-color: #2e7d32; /* Deep veggie green */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #ff6f00; /* Carrot Orange */
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0px white;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #558b2f;
+            font-weight: bold;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px; /* Keep it focused and vertical */
+        }
+
+        .veggie-box {
+            background: white;
+            border: 6px solid;
+            border-radius: 30px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .veggie-box:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 20px rgba(0,0,0,0.1);
+        }
+
+        .veggie-emoji {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        .veggie-name {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 900;
+            margin: 0;
+            text-transform: capitalize;
+        }
+
+        .veggie-fact {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Fresh Veggie Colors */
+        .color-0 { border-color: #4CAF50; } /* Green */
+        .color-1 { border-color: #FF9800; } /* Orange */
+        .color-2 { border-color: #F44336; } /* Red */
+        .color-3 { border-color: #9C27B0; } /* Purple/Eggplant */
+        .color-4 { border-color: #CDDC39; } /* Lime */
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+            }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+    <div class="header-container">
+        <h1>🥦 Learn Vegetables 🥕</h1>
+        <p class="subtitle">Click a vegetable to hear its name!</p>
+    </div>
+
+    <div id="veggie-grid" class="grid-container"></div>
+
+    <script>
+        const veggieData = [
+            { name: 'Carrot', icon: '🥕', fact: 'Good for eyes!' },
+            { name: 'Broccoli', icon: '🥦', fact: 'Tiny green trees' },
+            { name: 'Tomato', icon: '🍅', fact: 'Juicy and red' },
+            { name: 'Eggplant', icon: '🍆', fact: 'Pretty purple' },
+            { name: 'Corn', icon: '🌽', fact: 'Sweet and yellow' },
+            { name: 'Potato', icon: '🥔', fact: 'Mashed or fried!' },
+            { name: 'Cucumber', icon: '🥒', fact: 'Cool and crunchy' },
+            { name: 'Pumpkin', icon: '🎃', fact: 'Big and orange' },
+            { name: 'Mushroom', icon: '🍄', fact: 'Forest friend' },
+            { name: 'Peas', icon: '🫛', fact: 'Little green balls' },
+            { name: 'Garlic', icon: '🧄', fact: 'Strong smell!' },
+            { name: 'Onion', icon: '🧅', fact: 'Layers of fun' }
+        ];
+
+        const grid = document.getElementById('veggie-grid');
+
+        veggieData.forEach((veggie, index) => {
+            const box = document.createElement('div');
+            box.className = `veggie-box color-${index % 5}`;
+            
+            box.innerHTML = `
+                <div class="veggie-emoji">${veggie.icon}</div>
+                <p class="veggie-name">${veggie.name}</p>
+                <p class="veggie-fact">${veggie.fact}</p>
+            `;
+
+            box.onclick = () => {
+                // Flash effect
+                box.style.backgroundColor = "#f0fff0";
+                setTimeout(() => box.style.backgroundColor = "white", 200);
+
+                // Voice Feedback
+                const speech = new SpeechSynthesisUtterance();
+                speech.text = `${veggie.name}. ${veggie.fact}`;
+                speech.rate = 1.0;
+                speech.pitch = 1.2; // Higher pitch for kids
+                window.speechSynthesis.speak(speech);
+            };
+
+            grid.appendChild(box);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Magic Colors</title>
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff5722;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px white;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .color-box {
+            background: white;
+            border-radius: 30px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 12px 0px rgba(0,0,0,0.05);
+            border: 10px solid white; /* Background color will change this */
+        }
+
+        .color-box:hover {
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .color-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            border: 5px solid rgba(255,255,255,0.5);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .color-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+
+        .color-example {
+            font-size: 3rem;
+            margin: 5px 0;
+        }
+
+        /* Fun Background Glows */
+        .color-box:active {
+            transform: scale(0.9);
+        }
+        .h3{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+    <h1>🌈 Magic Colors 🌈</h1>
+    <h3> Click a month to hear its secret fact!</h3>
+    <div id="color-grid" class="grid-container"></div>
+
+    <script>
+        const colorGrid = document.getElementById('color-grid');
+
+        // Color Data for Kids
+        const colorData = [
+            { name: 'Red', hex: '#FF5252', item: 'Apple', icon: '🍎' },
+            { name: 'Blue', hex: '#448AFF', item: 'Sky', icon: '☁️' },
+            { name: 'Green', hex: '#4CAF50', item: 'Leaf', icon: '🌿' },
+            { name: 'Yellow', hex: '#FFC107', item: 'Sun', icon: '☀️' },
+            { name: 'Orange', hex: '#FF9800', item: 'Orange', icon: '🍊' },
+            { name: 'Pink', hex: '#E91E63', item: 'Flower', icon: '🌸' },
+            { name: 'Purple', hex: '#9C27B0', item: 'Grapes', icon: '🍇' },
+            { name: 'Brown', hex: '#795548', item: 'Chocolate', icon: '🍫' },
+            { name: 'Black', hex: '#212121', item: 'Crow', icon: '🐦‍⬛' },
+            { name: 'White', hex: '#FFFFFF', item: 'Snow', icon: '❄️' }
+        ];
+
+        colorData.forEach((color) => {
+            const box = document.createElement('div');
+            box.className = 'color-box';
+            box.style.borderColor = color.hex;
+
+            box.innerHTML = `
+                <div class="color-circle" style="background-color: ${color.hex}"></div>
+                <div class="color-name" style="color: ${color.hex === '#FFFFFF' ? '#555' : color.hex}">${color.name}</div>
+                <div class="color-example">${color.icon}</div>
+                <p style="font-weight:bold; color:#777;">${color.item}</p>
+            `;
+
+            box.onclick = () => {
+                // Change body background temporarily for magic effect
+                document.body.style.backgroundColor = color.hex + "33"; // 33 adds transparency
+                setTimeout(() => document.body.style.backgroundColor = "#f0f4f8", 500);
+
+                // Kids Speech Synthesis
+                const speech = new SpeechSynthesisUtterance();
+                speech.text = `This is ${color.name}... like an... ${color.item}`;
+                speech.rate = 0.9;
+                speech.pitch = 1.2;
+                window.speechSynthesis.speak(speech);
+            };
+
+            colorGrid.appendChild(box);
+        });
+    </script>
+</body>
+</html>

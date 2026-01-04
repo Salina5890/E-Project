@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kid Zone | Fun Learning</title>
+<link href="fonts.googleapis.com" rel="stylesheet">
+    <!-- Google Fonts for Kids (Fredoka One is perfect for kids) -->
+    <link href="fonts.googleapis.com" rel="stylesheet">
+    <!-- No Bootstrap required now, using pure CSS -->
+
+    <style>
+        /* 1. Global Styles & Color Scheme */
+        :root {
+        background-color: #FFF9C4 ;
+        
+    
+
+            --card-bg: #FFFFFF;
+            --main-text: #E94560;
+            --btn-color: #FF5733; /* Vibrant Orange-Red */
+            --btn-shadow: #c0392b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* 2. Header Text (No Navbar) */
+        .hero-section {
+            color: white;
+            text-align: center;
+            padding: 50px 20px 80px 20px; /* Added padding bottom to fill space */
+        }
+
+        .hero-section h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 65px;
+            text-shadow: 4px 4px 0px var(--main-text); /* Fun text shadow */
+        }
+
+        .hero-section p {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* 3. The 3-Column Grid Container */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* EXACTLY 3 PER LINE */
+            gap: 30px;
+            padding: 0 40px 40px 40px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* 4. Custom Card Styling */
+        .custom-card {
+            background: var(--card-bg);
+            border: 6px solid #FF9A8B; /* Soft pink border */
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .custom-card:hover {
+            transform: translateY(-15px) rotate(2deg); /* Interactive effect */
+            border-color: var(--btn-color);
+        }
+
+        .custom-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 4px solid #f0f0f0;
+        }
+
+        .card-body {
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--main-text);
+            font-size: 26px;
+        }
+
+        /* 5. Fun Button (Navigation Fixed) */
+        .btn-kid {
+            background-color: var(--btn-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            box-shadow: 0 6px var(--btn-shadow);
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .btn-kid:hover {
+            background-color: #E94560; /* Darker Pink/Red on hover */
+            box-shadow: 0 4px #a0283c;
+            color: white;
+            transform: translateY(2px);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .cards-container {
+                grid-template-columns: repeat(1, 1fr); /* 1 per line on mobile */
+                padding: 20px;
+            }
+           .hero-section {
+        background-color: #FFC0CB; /* Pink background */
+        padding: 60px 20px;
+        text-align: center;
+        border-radius: 30px; /* Rounded corners for a friendly feel */
+        margin: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+.container{
+
+     text-align: center;            /* Centers all text & inline elements */
+    display: flex;                   /* Modern 2026 approach for flex layout */
+    flex-direction: column;          /* Stacks content vertically */
+    align-items: center;
+     justify-content: center;   
+
+}
+        }
+    
+    
+
+    </style>
+</head>
+<body>
+
+    
+       <!-- Navigation Header -->
+<header class="navbar">
+    <h1 class="logo">KIDSZONE</h1>
+    <nav id="main-nav">
+        <a href ="home.html">
+<button class="active">Home</button>
+</a>
+        
+<a href ="about.html">
+        <button class="active">About</button>
+        </a>
+    
+       <a href ="Login.html">
+        <button class="active">Login</button>
+        </a>
+    
+    </nav>
+</header>
+
+<style>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5,  #4facfe, #43e97b, #f9d423);
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.navbar h1 {
+    color: #fff;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar nav button {
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    margin-left: 10px;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar nav button.active {
+    background: #fff;
+    color: #784ba0;
+    font-weight: 700;
+}
+
+.MyHeading{
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; text-align: center; }
+}
+</style>
+
+<script>
+    function setActive(element) {
+        // Remove active class from all buttons
+        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        element.classList.add('active');
+    }
+</script>
+
+<header>
+    <div class ="MyHeading">
+        <h1> Choose Your adventure!</h1>
+        <h3> Join the Fun in the Kid Zone! </h3>
+    </div>
+</header>
+   
+    <!-- Grid Container (3 Cards per line) -->
+    <div class="cards-container">
+        
+        <!-- Card 1 -->
+        <div class="custom-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEtIXgtAXrgkmbaOEpsgGLh8DyvPSWRYeHTw&s" alt="Counting">
+            <div class="card-body">
+                <h3>Rhymes</h3>
+                <!-- Make sure 'counting.html' exists -->
+                <a href="Rhymes.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="custom-card">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/007/078/390/small/the-letters-abc-in-doodle-style-hand-drawn-colorful-illustration-design-elements-are-isolated-on-a-white-background-vector.jpg" alt="Alphabets">
+            <div class="card-body">
+                <h3>Learn Alphabets</h3>
+                 <!-- Make sure 'Alphabet.html' exists -->
+                <a href="Alphabet.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="custom-card">
+            <img src="https://content.tinytap.it/66D667CC-5C12-4519-B8DC-D7B1A10D29F2/unzipped%2Fphoto1%2Fphoto1phone.jpg"  alt="Colors">
+            <div class="card-body">
+                <h3>Learn Colors</h3>
+                 
+                <a href="color.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="custom-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8IkFr5JKkxTpFLZmdyXA4pSYUcZAoJfemeA&s
+" alt="Animals">
+            <div class="card-body">
+                <h3>Learn Animals</h3>
+                 
+                <a href="Animal.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="custom-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpQBjlQEv1Z-exRXX2F3ed1GnarvJRCFYlNA&s"  alt="Shapes">
+            <div class="card-body">
+                <h3>Learn Shapes</h3>
+                 
+                <a href="shapes.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="custom-card">
+            <img src="https://img2.clipart-library.com/28/vegetables-clipart-with-names/vegetables-clipart-with-names-27.jpg" alt="Image 1">
+    
+            <div class="card-body">
+                <h3> Learn Vegetables</h3>
+                 
+                <a href="vegetable.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+        
+
+
+
+         <div class="custom-card">
+            <img src="https://static.pw.live/5eb393ee95fab7468a79d189/GLOBAL_CMS_BLOGS/0baec4d6-f6df-490e-af21-6863305d49ae.png" alt="Tables">
+            <div class="card-body">
+                <h3>Birds </h3>
+                 <!-- Make sure 'tables.html' exists -->
+                <a href="birds.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+        
+
+
+         <div class="custom-card">
+            <img src="https://i.ytimg.com/vi/TXMDk3UynOo/maxresdefault.jpg" alt="Tables">
+            <div class="card-body">
+                <h3>Months Name</h3>
+                 <!-- Make sure 'tables.html' exists -->
+                <a href="months.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+        
+
+         <div class="custom-card">
+            <img src="https://dryuc24b85zbr.cloudfront.net/tes/resources/7013765/image?width=500&height=500&version=1439945604014" alt="Tables">
+            <div class="card-body">
+                <h3>Learn Weeks Name </h3>
+                 
+                <a href="week.html" class="btn-kid">Let's Go! </a>
+            </div>
+        </div>
+        
+         <div class="custom-card">
+            <img src="https://cdn.firstcry.com/education/2022/06/16125631/Table-of-1-2.jpg" alt="Tables">
+            <div class="card-body">
+                <h3>Learn Tables</h3>
+                 
+                <a href="table.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+        
+         <div class="custom-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSajstR7YUkAPXxe8z8O7hh1bxvHa0GGKHFLA&s" alt="Tables">
+            <div class="card-body">
+                <h3> Math Quiz</h3>
+                 
+                <a href="Quiz.html" class="btn-kid">Additional + Subtraction - </a>
+
+
+
+            </div>
+        </div>
+        <div class="custom-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJwn147QlJf0uPgqzsPR4bgf5tAGJnXlTxA&s" alt="Counting">
+            <div class="card-body">
+                <h3>Learn Counting</h3>
+                <!-- Make sure 'counting.html' exists -->
+                <a href="Counting .html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+         <div class="custom-card">
+            <img src="https://www.adda247.com/jobs/wp-content/uploads/sites/2/2022/09/26131424/BODY-PARTS.png" alt="Counting">
+            <div class="card-body">
+                <h3>Body Parts</h3>
+                <!-- Make sure 'counting.html' exists -->
+                <a href="bodyparts.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+         <div class="custom-card">
+            <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/image_repo/7b/18/t-t-29140-seasons-photo-display-lettering-a4-display-poster_ver_1.jpg" alt="Counting">
+            <div class="card-body">
+                <h3>Learn Season</h3>
+                <!-- Make sure 'counting.html' exists -->
+                <a href="season.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+        
+        <div class="custom-card">
+            <img src="https://i.ytimg.com/vi/1iX5jT0lHnA/hqdefault.jpg?v=5ffe860f" alt="Counting">
+            <div class="card-body">
+                <h3>Learn water Animal</h3>
+                <!-- Make sure 'counting.html' exists -->
+                <a href="Sea.html" class="btn-kid">Let's Go!</a>
+            </div>
+        </div>
+        
+    </div>
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3 class="float">🌈 Kid Zone</h3>
+            <p>A safe and joyful place where kids learn, play, and grow every day.</p>
+        </div>
+        <div class="footer-box">
+            <h3>🎨 Activities</h3>
+            <a href="#">Drawing & Art</a>
+            <a href="#">Learning Games</a>
+            <a href="#">Story Time</a>
+            <a href="#">Fun Quizzes</a>
+        </div>
+        <div class="footer-box">
+            <h3>🧸 For Parents</h3>
+            <a href="#">Safety Policy</a>
+            <a href="#">Learning Goals</a>
+            <a href="#">Parent Guide</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-box">
+            <h3>💖 Follow Us</h3>
+            <div class="social-icons">
+                <span>📘</span><span>📸</span><span>🎵</span><span>▶</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © <span id="footer-year"></span> Kid Zone. Made with 💕 for happy kids.
+    </div>
+</footer>
+
+<style>
+footer {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+    padding: 40px 20px 20px;
+    color: #333;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: 50px;
+    box-shadow: 0 -8px 20px rgba(0,0,0,0.05);
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.footer-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff4d6d;
+}
+
+.footer-box p, .footer-box a {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+    transition: transform 0.3s ease;
+}
+
+.footer-box a:hover {
+    transform: translateX(6px);
+    color: #ff4d6d;
+}
+
+.social-icons { display: flex; gap: 10px; margin-top: 10px; }
+
+.social-icons span {
+    width: 38px; height: 38px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: 0.3s;
+}
+
+.footer-bottom { text-align: center; margin-top: 30px; font-size: 13px; opacity: 0.8; }
+
+.float { animation: floatAnim 3s ease-in-out infinite; }
+
+@keyframes floatAnim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+</style>
+
+<script>
+    // Update the footer year automatically for 2026
+    document.getElementById("footer-year").innerText = new Date().getFullYear();
+</script>
+
+</body>
+</html>

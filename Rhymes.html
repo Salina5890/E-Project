@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidsZone Nursery Rhymes 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;600&family=Sour+Gummy:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- GLOBAL & NAVBAR STYLES --- */
+        body {
+            margin: 0;
+            font-family: 'DynaPuff', cursive;
+            background: linear-gradient(180deg, #AEEFFF 0%, #E0F7FA 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: #E4F78F;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .dropdown { position: relative; display: inline-block; }
+
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+        }
+
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-family: sans-serif;
+        }
+
+        .dropdown-content a:hover { background-color: #f5fce0; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .music-control-bar {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .header { text-align: center; padding: 20px 20px; }
+        h1 {
+            font-family: 'Sour Gummy', cursive;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: #FF5252;
+            text-shadow: 3px 3px 0 white;
+            margin: 0;
+        }
+
+        .rhyme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
+
+        .rhyme-card {
+            background: white;
+            border-radius: 40px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 8px solid white;
+            transition: 0.3s;
+        }
+
+        .rhyme-card:hover { transform: translateY(-10px); border-color: #FFD700; }
+
+        .rhyme-img {
+            width: 100%;
+            height: 200px;
+            border-radius: 30px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .rhyme-title { color: #E91E63; font-size: 1.8rem; margin: 10px 0; }
+        .rhyme-text { font-size: 1.1rem; color: #555; white-space: pre-line; line-height: 1.6; margin-bottom: 20px; }
+
+        .btn-play {
+            background: #FF5252;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-family: 'DynaPuff', cursive;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #C62828;
+            transition: 0.2s;
+            margin: 5px;
+        }
+
+        .btn-play:active {
+            transform: translateY(4px);
+            box-shadow: 0 1px 0 #C62828;
+        }
+
+        .btn-music {
+            background: #4CAF50;
+            box-shadow: 0 5px 0 #2E7D32;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+</audio>
+
+<nav class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting.html">Counting</a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="months.html">Months</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Rhymes</a>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="header">
+    <h1>Rhymes Time! 🌈</h1>
+    <p style="color: #0288D1;">Click "Read Poem" to hear the words aloud!</p>
+</div>
+
+<div class="rhyme-grid" id="rhymeGrid"></div>
+
+<script>
+const rhymes = [
+    {
+        title: "Twinkle Twinkle",
+        img: "https://monkeypen.com/cdn/shop/articles/Twinkle_Twinkle_Little_Star_Thumbnail_Blog.png?crop=center&height=1200&v=1764074005&width=1200",
+        text: "Twinkle, twinkle, little star,\nHow I wonder what you are!\nUp above the world so high,\nLike a diamond in the sky."
+    },
+    {
+        title: "Johny Johny",
+        img: "https://media.wayokids.com/uploads/13/5b503ebd10f39-kr.jpg",
+        text: "Johny, Johny, Yes Papa?\nEating sugar? No Papa!\nTelling lies? No Papa!\nOpen your mouth, Ha! Ha! Ha!"
+    },
+    {
+        title: "Ba Ba Black Sheep",
+        img: "https://i.ytimg.com/vi/6RmzV9QgnlQ/sddefault.jpg",
+        text: "Ba, ba, black sheep,\nHave you any wool?\nYes, sir, yes, sir,\nThree bags full!"
+    }
+];
+
+const bgMusic = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+let currentReadingId = null;
+
+function toggleMusic() {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        bgMusic.volume = 0.15;
+        musicBtn.innerText = "⏸ Pause Music";
+    } else {
+        bgMusic.pause();
+        musicBtn.innerText = "🎵 Play Happy Music";
+    }
+}
+
+const grid = document.getElementById('rhymeGrid');
+rhymes.forEach((r, index) => {
+    grid.innerHTML += `
+        <div class="rhyme-card">
+            <img src="${r.img}" class="rhyme-img" alt="${r.title}">
+            <div class="rhyme-title">${r.title}</div>
+            <p class="rhyme-text" id="text-${index}">${r.text}</p>
+            <button class="btn-play" id="btn-${index}" onclick="readRhyme(${index})">📢 Read Poem</button>
+        </div>
+    `;
+});
+
+function readRhyme(id) {
+    const btn = document.getElementById(`btn-${id}`);
+
+    // LOGIC: If we click the SAME button while it's reading, STOP IT.
+    if (window.speechSynthesis.speaking && currentReadingId === id) {
+        window.speechSynthesis.cancel();
+        handleStop(id);
+        return;
+    }
+
+    // If something else is reading, stop it first
+    window.speechSynthesis.cancel();
+    resetButtons();
+
+    // Start New Reading
+    currentReadingId = id;
+    if (!bgMusic.paused) bgMusic.volume = 0.03;
+
+    const utterance = new SpeechSynthesisUtterance(rhymes[id].text);
+    utterance.pitch = 1.2;
+    utterance.rate = 0.85;
+
+    utterance.onstart = () => {
+        btn.innerText = "🛑 Stop Reading";
+        btn.style.background = "#333";
+    };
+
+    utterance.onend = () => {
+        handleStop(id);
+    };
+
+    window.speechSynthesis.speak(utterance);
+}
+
+function handleStop(id) {
+    const btn = document.getElementById(`btn-${id}`);
+    btn.innerText = "📢 Read Poem";
+    btn.style.background = "#FF5252";
+    currentReadingId = null;
+    if (!bgMusic.paused) bgMusic.volume = 0.15;
+}
+
+function resetButtons() {
+    rhymes.forEach((_, idx) => {
+        const b = document.getElementById(`btn-${idx}`);
+        b.innerText = "📢 Read Poem";
+        b.style.background = "#FF5252";
+    });
+}
+</script>
+</body>
+</html>

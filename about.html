@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parenting Guide 2026</title>
+    <!-- Modern rounded font for kids & parents -->
+    <link href="fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #EF476F;
+            --primary-blue: #118AB2;
+            --primary-green: #06D6A0;
+            --accent-yellow: #FFD166;
+            --bg-soft:#FFC5D3 ;
+        }
+
+        body {
+            background-color: var(--bg-soft);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* 1. Vertical Container with 2026 "Snug Simple" Trend */
+        .container {
+            background: white;
+            width: 90%;
+            max-width: 380px; 
+            padding: 40px 30px;
+            border-radius: 40px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            border: 6px solid  #FF8B94;
+            position: relative;
+        }
+
+        /* 2. Image Box Fix (Object-fit for logo clarity) */
+        .img-box {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px;
+            border-radius: 30px;
+            overflow: hidden;
+            background-color: #fff;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .img-box:hover {
+            transform: scale(1.05) rotate(2deg); /* Interactive micro-animation */
+        }
+
+        .img-box img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+
+        h3 {
+            color: var(--primary-pink);
+            font-weight: 900;
+            font-size: 1.8rem;
+            margin: 0 0 5px 0;
+        }
+
+        h4 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* 3. Modern 3D "Pushable" Button (High Click-rate for 2026) */
+        .btn-push {
+            background: #059669; /* Darker green for shadow */
+            border-radius: 15px;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            outline-offset: 4px;
+        }
+
+        .btn-text {
+            display: block;
+            padding: 12px 32px;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: var(--primary-green);
+            color: white;
+            transform: translateY(-6px);
+            transition: transform 0.1s;
+        }
+
+        .btn-push:active .btn-text {
+            transform: translateY(-2px);
+        }
+
+        .btn-push:hover .btn-text {
+            filter: brightness(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="img-box">
+        <!-- Replaced img-box tag with standard img for proper rendering -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsmINc7rj6wbWh1Meyarm_IKm5x_nMFKiN2A&s" alt="Kids Zone Logo">
+    </div>
+    
+    <h3>About My Website</h3>
+    <h4>Parenting Guide</h4>
+    
+    <p>
+        Our mission is to make education an <strong>exciting adventure</strong>! 
+        From exploring the animal kingdom to mastering math tables, we use 
+        colors, sounds, and play to help young minds grow. We believe that 
+        when kids have fun, they learn best!
+    </p>
+    </p>
+
+    <!-- Interactive Call to Action -->
+   <div class="btn-container">
+    <a href="first.html" style="text-decoration: none;">
+        <button class="btn-push">
+            <span class="btn-text">Start Exploring ✨</span>
+        </button>
+    </a>
+</div>
+
+</body>
+</html>

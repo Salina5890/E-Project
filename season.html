@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Interactive Seasons</title>
+    <link href="fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #89CFF0;
+            --accent-color: #2196F3;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'DynaPuff', cursive;
+            background-color: var(--bg-color);
+            transition: background 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header { text-align: center; padding: 40px 20px; z-index: 10; }
+        h1 { font-family: 'Sour Gummy', cursive; font-size: clamp(3rem, 8vw, 5rem); color: white; text-shadow: 6px 6px 0px rgba(0,0,0,0.1); margin: 0; }
+
+        .toggle-btn {
+            background: white;
+            border: 6px solid var(--accent-color);
+            padding: 18px 45px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            cursor: pointer;
+            box-shadow: 0 10px 0px var(--accent-color);
+            transition: all 0.2s ease;
+            margin-top: 25px;
+            font-family: 'DynaPuff', cursive;
+        }
+
+        .toggle-btn:active { transform: translateY(8px); box-shadow: 0 2px 0px var(--accent-color); }
+
+        .season-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            width: 90%;
+            max-width: 1100px;
+            padding: 40px;
+            z-index: 5;
+        }
+
+        .card {
+            background: white;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+            padding: 35px 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: 6px solid transparent;
+        }
+
+        .card:hover { transform: scale(1.1) rotate(-3deg); border-color: var(--accent-color); }
+        .card .icon { font-size: 5.5rem; display: block; margin-bottom: 10px; }
+        .card h2 { margin: 0; color: #333; font-size: 1.8rem; }
+
+        .particle { position: absolute; top: -10%; z-index: 1; pointer-events: none; animation: fall linear infinite; }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0.3; }
+        }
+    </style>
+</head>
+<body id="season-body">
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+    <div class="header">
+        <h1 id="main-title">Rainy Day!</h1>
+        <button class="toggle-btn" id="master-btn" onclick="goToNext()">Next Season ➔</button>
+    </div>
+
+    <!-- Cards now have IDs 0, 1, 2, 3 corresponding to the seasons array -->
+    <div class="season-grid">
+        <div class="card" onclick="setSeason(0)">
+            <span class="icon">🌧️</span>
+            <h2>Rainy</h2>
+        </div>
+        <div class="card" onclick="setSeason(1)">
+            <span class="icon">🍂</span>
+            <h2>Autumn</h2>
+        </div>
+        <div class="card" onclick="setSeason(2)">
+            <span class="icon">☃️</span>
+            <h2>Winter</h2>
+        </div>
+        <div class="card" onclick="setSeason(3)">
+            <span class="icon">☀️</span>
+            <h2>Summer</h2>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const seasons = [
+            { name: 'Rainy', emoji: '💧', bg: '#89CFF0', accent: '#2196F3', title: 'Rainy Day!' },
+            { name: 'Autumn', emoji: '🍂', bg: '#FFB347', accent: '#E67E22', title: 'Autumn Gold!' },
+            { name: 'Winter', emoji: '❄️', bg: '#E0F7FA', accent: '#00BCD4', title: 'Winter Wonderland!' },
+            { name: 'Summer', emoji: '☀️', bg: '#FFF176', accent: '#FBC02D', title: 'Summer Fun!' }
+        ];
+
+        // This function sets the season SPECIFICALLY based on what you click
+        function setSeason(index) {
+            currentIndex = index;
+            const s = seasons[currentIndex];
+            
+            // 1. Change Colors
+            const body = document.getElementById('season-body');
+            body.style.setProperty('--bg-color', s.bg);
+            body.style.setProperty('--accent-color', s.accent);
+            
+            // 2. Change Text
+            document.getElementById('main-title').innerText = s.title;
+            
+            // 3. Clear and Spawn new particles
+            document.querySelectorAll('.particle').forEach(p => p.remove());
+            spawnParticles(s.emoji);
+
+            // 4. Voice Feedback
+            speak(`Magic switch to ${s.name}!`);
+        }
+
+        // The button still works to cycle through them
+        function goToNext() {
+            let nextIndex = (currentIndex + 1) % seasons.length;
+            setSeason(nextIndex);
+        }
+
+        function spawnParticles(emoji) {
+            for (let i = 0; i < 35; i++) {
+                let p = document.createElement('div');
+                p.className = 'particle';
+                p.innerText = emoji;
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.fontSize = (Math.random() * 25 + 20) + 'px';
+                p.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                document.body.appendChild(p);
+            }
+        }
+
+        function speak(text) {
+            window.speechSynthesis.cancel();
+            const msg = new SpeechSynthesisUtterance(text);
+            msg.pitch = 1.6;
+            window.speechSynthesis.speak(msg);
+        }
+
+        // Initialize particles
+        spawnParticles('💧');
+    </script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Water Magic</title>
+    <style>
+        body {
+            /* 2026 Animated Water Background */
+            background: linear-gradient(180deg, #89CFF0 0%, #2196F3 100%);
+            background-size: 400% 400%;
+            animation: waterFlow 10s ease infinite;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        @keyframes waterFlow {
+            0% { background-position: 50% 0%; }
+            50% { background-position: 50% 100%; }
+            100% { background-position: 50% 0%; }
+        }
+
+        /* Floating Bubbles Container */
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            bottom: -50px;
+            animation: rise 10s infinite ease-in;
+            z-index: -1;
+        }
+
+        @keyframes rise {
+            0% { bottom: -50px; transform: translateX(0); opacity: 1; }
+            100% { bottom: 100vh; transform: translateX(100px); opacity: 0; }
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 4px 4px 0px #1565C0;
+        }
+
+        h3 { color: white; margin-bottom: 30px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1100px;
+            z-index: 1;
+        }
+
+        .animal-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 12px 0px rgba(21, 101, 192, 0.4);
+            border: 8px solid #89CFF0;
+        }
+
+        .animal-box:hover {
+            transform: scale(1.1) translateY(-10px);
+            background: white;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+        }
+
+        .animal-icon {
+            font-size: 4.5rem;
+            margin: 10px 0;
+            display: block;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+        }
+
+        .animal-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1565C0;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <style>
+        /* Modern 2026 Clean Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #fcfdf7;
+        }
+
+        .navbar {
+            background-color: #E4F78F; /* Your Pastel Green Yellow */
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Main Nav Buttons */
+        .dropbtn {
+            background-color: transparent;
+            color: #3d4a1a;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown Box */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            border-top: 2px solid #E4F78F;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-content a {
+            color: #444;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5fce0;
+            color: #000;
+            padding-left: 25px; /* Subtle slide effect */
+        }
+
+        /* Show on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Mobile Layout */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .dropbtn {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+            }
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Group 1: Animals -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Animals ▾</button>
+        <div class="dropdown-content">
+            <a href="Animal.html">Animals</a>
+            <a href="Sea.html">Sea Animals</a>
+            <a href="birds.html">Birds</a>
+        </div>
+    </div>
+
+    <!-- Group 2: Tables & Quizzes -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Math ▾</button>
+        <div class="dropdown-content">
+            <a href="Counting .html">Counting </a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="shapes.html">Shapes</a>
+            <a href="color.html">Colors</a>
+        </div>
+    </div>
+
+    <!-- Group 3: General Knowledge -->
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleMenu(this)">Others ▾</button>
+        <div class="dropdown-content">
+            <a href="bodyparts.html">Body Part</a>
+            <a href="months.html">Month Name</a>
+            <a href="week.html">Week Name</a>
+            <a href="vegetable.html">Vegetables</a>
+            <a href="Rhymes.html">Vegetables</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Javascript to assist with mobile toggle clicks
+    function toggleMenu(btn) {
+        if (window.innerWidth <= 768) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            
+            // Close all other menus first
+            document.querySelectorAll('.dropdown-content').forEach(nav => {
+                nav.style.display = "none";
+            });
+
+            // Toggle current
+            content.style.display = isOpen ? "none" : "block";
+        }
+    }
+</script>
+
+
+
+    <h1>🌊 Water Magic 🌊</h1>
+    <h3>Click an animal to hear its secret splash!</h3>
+    
+    <div id="animal-grid" class="grid-container"></div>
+
+    <script>
+        const grid = document.getElementById('animal-grid');
+
+        const waterAnimals = [
+            { name: 'Shark', icon: '🦈', fact: 'Sharks have no bones!' },
+            { name: 'Dolphin', icon: '🐬', fact: 'Dolphins sleep with one eye open!' },
+            { name: 'Whale', icon: '🐳', fact: 'Whales are the biggest animals!' },
+            { name: 'Octopus', icon: '🐙', fact: 'Octopuses have three hearts!' },
+            { name: 'Turtle', icon: '🐢', fact: 'Turtles can live for 100 years!' },
+            { name: 'Crab', icon: '🦀', fact: 'Crabs walk sideways!' },
+            { name: 'Fish', icon: '🐠', fact: 'Fish breathe underwater!' },
+            { name: 'Lobster', icon: '🦞', fact: 'Lobsters can live very long!' },
+            { name: 'Penguin', icon: '🐧', fact: 'Penguins are great swimmers!' },
+            { name: 'Snail', icon: '🐌', fact: 'Seals clap their flippers!' }
+        ];
+
+        // Create Animal Boxes
+        waterAnimals.forEach(animal => {
+            const box = document.createElement('div');
+            box.className = 'animal-box';
+            box.innerHTML = `
+                <span class="animal-icon">${animal.icon}</span>
+                <div class="animal-name">${animal.name}</div>
+                <p style="color:#555; font-size: 0.9rem;">Click to hear fact!</p>
+            `;
+
+            box.onclick = () => {
+                const speech = new SpeechSynthesisUtterance();
+                speech.text = `This is a ${animal.name}. Did you know? ${animal.fact}`;
+                speech.rate = 0.9;
+                window.speechSynthesis.speak(speech);
+            };
+            grid.appendChild(box);
+        });
+
+        // Create Animated Bubbles for Background
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            const size = Math.random() * 60 + 10 + 'px';
+            bubble.style.width = size;
+            bubble.style.height = size;
+            bubble.style.left = Math.random() * 100 + 'vw';
+            bubble.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.body.appendChild(bubble);
+            
+            setTimeout(() => { bubble.remove(); }, 10000);
+        }
+        setInterval(createBubble, 500);
+    </script>
+</body>
+</html>
